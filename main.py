@@ -17,3 +17,21 @@ def carregar_livros():
         for livro in leitor:
             livro["isbn"] = int(livro["isbn"])
             livros.append(livro)
+
+# Função para cadastrar um livro
+def cadastrar():
+    titulo = input("Digite o título do livro: ")
+    autor = input("Digite o autor do livro: ")
+    ano = input("Digite o ano de publicação: ")
+    ISBN = int(input("Digite o ISBN do livro: "))
+
+    livro = {
+        "isbn": ISBN,
+        "titulo": titulo,
+        "autor": autor,
+        "ano": ano,
+        "status": "disponível"
+    }
+    livros.append(livro)
+    salvar_livros()
+    print("\nLivro cadastrado com sucesso!")
